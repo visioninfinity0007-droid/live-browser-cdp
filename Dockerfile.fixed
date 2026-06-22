@@ -5,9 +5,10 @@ ENV DISPLAY=:1
 ENV VNC_PORT=5901
 ENV NOVNC_PORT=6901
 ENV CDP_PORT=9222
+ENV CHROME_DEBUG_PORT=9333
 ENV CHROME_USER_DATA_DIR=/data/chrome-profile
 
-RUN apt-get update && apt-get install -y --no-install-recommends chromium xvfb x11vnc fluxbox supervisor wget curl git net-tools ca-certificates python3 websockify novnc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends chromium xvfb x11vnc fluxbox supervisor wget curl git net-tools ca-certificates python3 websockify novnc socat && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /data/chrome-profile /var/log/supervisor
 
